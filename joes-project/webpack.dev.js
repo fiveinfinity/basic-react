@@ -11,7 +11,7 @@ module.exports = merge(common, {
     })
   ],
   devServer: {
-    contentBase: './dist',
+    contentBase: './dis7',
     hot: true
   }
 });

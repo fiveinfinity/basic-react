@@ -1,7 +1,7 @@
 const webpack = require('webpack');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: './src/inde7.js',
   output: {
     filename: '[name].[hash:5].chunk.js',
     path: __dirname + '/dist',
