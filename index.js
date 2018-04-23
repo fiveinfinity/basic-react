@@ -5,14 +5,14 @@ const ora = require('ora');
 let spinner;
 
 const commands = {
-  makeDirectories: function(name) { return `mkdir ${name} && mkdir ${name}/public && mkdir ${name}/src` },
+  makeDirectories: function(name) { return `mkdir ${name} && mkdir ${name}/public && mkdir ${name}/src && mkdir ${name}/src/components` },
   copyPackageJSON: function(name) { return `cp files/package.json ${name}/package.json` },
   enterDirectory: function(name) { return `cd ${name}` },
   npmInit: 'npm init -y',
-  dependencies: 'npm install --save react react-dom',
+  dependencies: 'npm install --save react react-dom rebass',
   devDependencies: 'npm install --save-dev babel-core babel-loader babel-preset-env babel-preset-react html-loader html-webpack-plugin jest json-loader style-loader url-loader webpack webpack-cli webpack-dev-server webpack-merge',
   removePackageLock: 'rm -rf package-lock.json',
-  copyFiles: function(name) { return `cp files/index.js ${name}/src/index.js && cp files/index.html ${name}/public/index.html` },
+  copyFiles: function(name) { return `cp files/index.js ${name}/src/index.js && cp files/index.html ${name}/public/index.html && cp files/components/index.js ${name}/src/components/index.js && cp files/components/title.js ${name}/src/components/title.js && cp files/style-theme.js ${name}/style-theme.js` },
   copyUpdates: function(name) { return `cp files/updates/.babelrc ${name}/.babelrc && cp files/updates/.gitignore ${name}/.gitignore && cp files/updates/webpack.common.js ${name}/webpack.common.js && cp files/updates/webpack.dev.js ${name}/webpack.dev.js` }
 };
 

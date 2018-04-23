@@ -1,9 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'rebass';
+import { Title } from './components';
+import theme from '../style-theme';
 
 const title = 'Basic React';
 
 ReactDOM.render(
-  <div>{title}</div>,
+  <Provider theme={theme}>
+    <Title title={title} />
+  </Provider>,
   document.getElementById('root')
 );
