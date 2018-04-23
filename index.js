@@ -35,7 +35,17 @@ program
   spinner = ora(message).start();
 
   try {
-    const { makeDirectories, copyPackageJSON, enterDirectory, npmInit, dependencies, devDependencies, removePackageLock, copyFiles, copyUpdates } = commands;
+    const { 
+      makeDirectories, 
+      copyPackageJSON, 
+      enterDirectory, 
+      npmInit, 
+      dependencies, 
+      devDependencies, 
+      removePackageLock, 
+      copyFiles, 
+      copyUpdates } = commands;
+
     if (update) {
       exec(`${copyUpdates(name)} && ${enterDirectory(name)} && ${removePackageLock} && ${dependencies} && ${devDependencies}`)
       .then(function () { spinner.stop() });
