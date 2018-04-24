@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { genericAction } from '../redux';
 import { connect } from 'react-redux';
+import { StyledButton } from '../styled-components';
+import P from 'prop-types';
 
 class TitleComponent extends Component {
   constructor(props) {
@@ -21,11 +23,15 @@ class TitleComponent extends Component {
     return (
       <div>
         {this.props.title}
-        <div onClick={this.toggle}>Click Me to Toggle Local State & Redux State</div>
+        <StyledButton onClick={this.toggle}>Click Me to Toggle Local State & Redux State</StyledButton>
         State: {this.state.show ? 'true' : 'false'}
       </div>
     );
   }
+}
+
+TitleComponent.propTypes = {
+  title: P.string
 }
 
 // Redux Boilerplate
@@ -37,3 +43,4 @@ const mapDispatchToProps = dispatch => {
 }
 const Title = connect(mapStateToProps, mapDispatchToProps)(TitleComponent);
 export { Title };
+
